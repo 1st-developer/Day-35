@@ -98,3 +98,13 @@ header {
         }
     }
 }
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 5px 50px;
+        nav {
+            display: none;
+        }
+    }
+}

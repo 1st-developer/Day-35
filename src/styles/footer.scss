@@ -4,7 +4,8 @@
     padding: 2rem 1rem;
   
     .footer-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       justify-content: space-between;
       flex-wrap: wrap;
   
@@ -74,5 +75,20 @@
       border-top: 1px solid #333333;
       padding-top: 1rem;
       font-size: 0.875rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .footer {
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .footer {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
     }
   }

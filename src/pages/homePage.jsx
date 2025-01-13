@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/homePage.scss"
+import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 function HomePage({isMenuVisible}) {
-
 
     return(
         <div className="page">
@@ -17,14 +18,14 @@ function HomePage({isMenuVisible}) {
                         </div>
                     </div>
                     <div className="connected">
-                    <button className="options">Product</button>
-                    <button className="options">Sell</button>
-                    <button className="options">Cost</button>
-                    <button className="options">Top Edits</button>
-                    <button className="options">Secure</button>
-                    <button className="options">Secure</button>
-                    <button className="options">Secure</button>
-                    <button className="options">Secure</button>
+                        <Link to={"/product"} className="options">Product</Link>
+                        <Link to={"/news"} className="options">News</Link>
+                        <Link to={"/versions"} className="options">Versions</Link>
+                        <Link to={"/top cells"} className="options">Top cells</Link>
+                        <Link to={"/work"} className="options">Work</Link>
+                        <Link to={"/settings"} className="options">Settings</Link>
+                        <Link to={"/account"} className="options">Account</Link>
+                        <Link to={"/navigations"} className="options">Navigations</Link>
                     </div>
                     <button className="other">Explore Other Options</button>
                 </div>
@@ -35,9 +36,10 @@ function HomePage({isMenuVisible}) {
             </div>
 
             <div className="right">
-                <div className="terget"></div>
+                <div className="targetEl">
+                    <Outlet />
+                </div>
             </div>
-
         </div>
     );
 }

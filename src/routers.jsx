@@ -8,6 +8,14 @@ import Contact from "./pages/contact";
 import Services from "./pages/services";
 import Technology from "./pages/technology";
 import Help from "./pages/help";
+import ProductContent from "./Contents/product.content"
+import News from "./Contents/news"
+import Versions from "./Contents/versions"
+import TopCells from "./Contents/top.cells"
+import Work from "./Contents/work"
+import Settings from "./Contents/settings"
+import Account from "./Contents/account"
+import Navigations from "./Contents/navigations"
 
 const RouterProviderComponent = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -24,6 +32,40 @@ const RouterProviderComponent = () => {
         {
           path: "/",
           element: <HomePage isMenuVisible={isMenuVisible} />,
+          children: [
+            {
+              path: "product",
+              element: <ProductContent />
+            },
+            {
+              path: "news",
+              element: <News />
+            },
+            {
+              path: "versions",
+              element: <Versions />
+            },
+            {
+              path: "top cells",
+              element: <TopCells />
+            },
+            {
+              path: "work",
+              element: <Work />
+            },
+            {
+              path: "settings",
+              element: <Settings />
+            },
+            {
+              path: "account",
+              element: <Account />
+            },
+            {
+              path: "navigations",
+              element: <Navigations />
+            },
+          ]
         },
         {
           path: "/about",
@@ -44,7 +86,7 @@ const RouterProviderComponent = () => {
         {
           path: "/help",
           element: <Help />,
-        },
+        }
       ],
     },
   ]);
