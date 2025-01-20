@@ -1,5 +1,3 @@
-import "../styles/product.content.scss"
-
 import "../styles/product.scss"
 
 function Product() {
